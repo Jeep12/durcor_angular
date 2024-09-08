@@ -1,0 +1,71 @@
+<!-- Tabla principal de facturas -->
+<table class="ticket-table">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Apellido</th>
+      <th>Nro Factura</th>
+      <th>Fecha</th>
+      <th>Total</th>
+      <th>Detalle</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let ticket of tickets">
+      <td>{{ ticket.usuario_nombre }}</td>
+      <td>{{ ticket.usuario_apellido }}</td>
+
+      <td>{{ ticket.factura_id }}</td>
+      <td>{{ ticket.fecha }}</td>
+      <td>{{ ticket.total | currency:'USD' }}</td>
+      <td>
+        <button class="btn-details" (click)="showDetails(ticket)">Ver detalles</button>
+      </td>
+      <td style="text-align: center; font-size: 17px;color: #343434;">
+        <i class="fa-solid fa-file-arrow-down"></i>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- Detalles de la factura seleccionada -->
+<div *ngIf="selectedTicket" class="ticket-details">
+  <h3>Detalles de la Factura</h3>
+  <p><strong>Factura Nro:</strong> {{ selectedTicket.factura_id }}</p>
+  <p><strong>Cliente:</strong> {{ selectedTicket.usuario_nombre }} {{ selectedTicket.usuario_apellido }}</p>
+  <p><strong>Dirección:</strong> {{ selectedTicket.direccion }} </p>
+
+  <p><strong>Fecha:</strong> {{ selectedTicket.fecha }}</p>
+  <p><strong>Total:</strong> {{ selectedTicket.total | currency:'USD' }}</p>
+
+  <h4>Detalles de los Productos/Servicios</h4>
+  <table class="details-table">
+    <thead>
+      <tr>
+        <th>Descripcion </th>
+
+        <th>Cantidad</th>
+        <th>Precio</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let detail of selectedTicket.detalle">
+        <td>{{ detail.producto_nombre }} {{ detail.servicio_nombre }} {{detail.servicio_descripcion}}</td>
+
+        <td>{{ detail.cantidad }}</td>
+        <td>{{ detail.precio | currency:'USD' }}</td>
+      </tr>
+
+    </tbody>
+  </table>
+ 
+  <hr>
+
+
+
+
+
+
+  <button class="btn-close" (click)="hideDetails()">Cerrar</button>
+</div>

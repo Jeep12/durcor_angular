@@ -1,0 +1,66 @@
+
+.accordion-button:hover {
+    background-color: #0056b3;
+}
+
+.accordion-panel {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    background-color: #f1f1f1;
+    padding: 0 15px;
+    border: 1px solid #ddd;
+}
+
+.accordion-panel.active {
+    max-height: 1000px; /* A large value to allow the content to be visible */
+    padding: 15px;
+}
+
+.email-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.email-form label {
+    margin-top: 10px;
+}
+
+.email-form input,
+.email-form textarea {
+    margin-bottom: 10px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.email-form button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.email-form button:hover {
+    background-color: #0056b3;
+}
+
+.email-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.email-table th,
+.email-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.email-table th {
+    background-color: #007bff;
+    color: white;
+}

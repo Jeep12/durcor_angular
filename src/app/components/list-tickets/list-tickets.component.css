@@ -1,0 +1,80 @@
+.ticket-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  .ticket-table thead tr th  {
+    text-align: center ;
+    background-color: white ;
+  }
+  .ticket-table th, .ticket-table td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+  }
+  
+  .ticket-table th {
+  }
+  
+  .btn-details, .btn-close {
+    background-color: #343a40;
+;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+    margin: auto;
+  }
+  
+  .btn-details:hover, .btn-close:hover {
+    background-color: #0056b3;
+  }
+  
+  .ticket-details {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+  }
+  
+  .details-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+  
+  .details-table th, .details-table td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+  }
+  
+  .details-table th {
+    background-color: #f4f4f4;
+  }
+  
+
+  .ticket-details {
+    margin-top: 20px;
+  }
+  
+  .detail-row {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+  }
+  
+  .detail-row p {
+    margin: 5px 0;
+  }
+  
+  .btn-close {
+    margin-top: 20px;
+  }
+  

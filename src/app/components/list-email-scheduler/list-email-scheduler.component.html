@@ -1,0 +1,39 @@
+<!-- Accordion Button -->
+<button class="accordion-button" (click)="togglePanel()">
+    Correos programados
+ </button>
+ 
+ <!-- Accordion Panel -->
+ <div class="accordion-panel" [ngClass]="{'active': isPanelOpen}">
+   
+
+ 
+<div class="container">
+    <div class="navBar" id="navBarId">
+      <a class="TituloPrincipal" id="Titulo_Calendario">Calendario {{ month }} {{ year }}</a>
+      <div class="botones-nav">
+        <button class="boton" (click)="previousMonth()">
+          <img style="transform:rotate(180deg)" src="https://img.icons8.com/ios-glyphs/30/000000/arrow.png" />
+        </button>
+        <button class="boton" (click)="nextMonth()">
+          <img src="https://img.icons8.com/ios-glyphs/30/000000/arrow.png" />
+        </button>
+      </div>
+    </div>
+  
+    <div class="calendario">
+      <div class="fuenteComun">Domingo</div>
+      <div class="fuenteComun">Lunes</div>
+      <div class="fuenteComun">Martes</div>
+      <div class="fuenteComun">Miércoles</div>
+      <div class="fuenteComun">Jueves</div>
+      <div class="fuenteComun">Viernes</div>
+      <div class="fuenteComun">Sábado</div>
+  
+      <div *ngFor="let day of days" class="bloque" [ngClass]="{ 'resaltar': day.isToday }">
+        <div class="numeroDia">{{ day.date }}</div>
+        <div><i class="fa-solid fa-envelope-circle-check"></i> 2 </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,34 @@
+<!-- Offcanvas Button -->
+<button class="openOffCanvas" (click)="openOffcanvas()">Gestionar Inventario</button>
+
+<!-- Offcanvas -->
+<div class="offcanvas" [ngClass]="{'show': isOffcanvasOpen}" (click)="closeOffcanvas($event)">
+    <div class="offcanvas-content" (click)="stopPropagation($event)">
+        <div class="offcanvas-header">
+            <button type="button" class="btn-close" (click)="closeOffcanvas()">
+                <i class="fa-solid fa-xmark"></i> <!-- Icono de X -->
+            </button>
+        </div>
+        <div class="offcanvas-body">
+            <h2>Inventario</h2>
+            <div class="product-list">
+                <div class="product-card" *ngFor="let product of products">
+                    <img [src]="product.imagen || '../../../assets/1.png'" alt="{{ product.nombre }}" class="product-image">
+                    <div class="product-info">
+                        <h3>{{ product.nombre }}</h3>
+                        <p>{{ product.descripcion }}</p>
+                        <p>Marca: {{ product.marca }}</p>
+                        <p>Precio: {{ product.precio | currency:'USD' }}</p>
+                        <p>Stock: {{ product.stock }}</p>
+                        <p>Categoria: {{ product.nombre_categoria }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="pagination">
+                <button (click)="changePage(currentPage - 1)" [disabled]="currentPage === 1">Prev</button>
+                <button *ngFor="let page of pages" (click)="changePage(page)">{{ page }}</button>
+                <button (click)="changePage(currentPage + 1)" [disabled]="currentPage === totalPages">Next</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,47 @@
+<!-- Accordion Button -->
+<button class="accordion-button" (click)="togglePanel()">
+    Programar Envío de correo
+</button>
+
+<!-- Accordion Panel -->
+<div class="accordion-panel" [ngClass]="{'active': isPanelOpen}">
+    <!-- Formulario para Programar Email -->
+    <form class="email-form" (ngSubmit)="scheduleEmail()">
+        <label for="emailRecipient">Destinatario:</label>
+        <input type="email" id="emailRecipient" name="emailRecipient" [(ngModel)]="email.recipient" required>
+
+        <label for="emailSubject">Asunto:</label>
+        <input type="text" id="emailSubject" name="emailSubject" [(ngModel)]="email.subject" required>
+
+        <label for="emailBody">Cuerpo del Email:</label>
+        <textarea id="emailBody" name="emailBody" [(ngModel)]="email.body" required></textarea>
+
+        <label for="emailSchedule">Programar para:</label>
+        <input type="datetime-local" id="emailSchedule" name="emailSchedule" [(ngModel)]="email.schedule" required>
+
+        <button type="submit">Programar Email</button>
+    </form>
+
+    <!-- Tabla de Envíos Programados -->
+    <div *ngIf="scheduledEmails.length">
+        <h3>Envíos Programados</h3>
+        <table class="email-table">
+            <thead>
+                <tr>
+                    <th>Destinatario</th>
+                    <th>Asunto</th>
+                    <th>Fecha y Hora</th>
+                    <th>Estado</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let email of scheduledEmails">
+                    <td>{{ email.recipient }}</td>
+                    <td>{{ email.subject }}</td>
+                    <td>{{ "asd"}}</td>
+                    <td>{{ email.status }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

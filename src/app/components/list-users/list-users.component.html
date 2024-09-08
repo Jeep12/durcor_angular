@@ -1,0 +1,26 @@
+
+<!-- Accordion Panel -->
+    <!-- Tabla de Usuarios -->
+    <table class="user-table">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Correo Electrónico</th>
+                <th>Rol</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users">
+                <td>{{ user.nombre }}</td>
+                <td>{{ user.apellido }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.rol }}</td>
+                <td>
+                    <button (click)="editUser(user)">Editar</button>
+                    <button (click)="deleteUser(user)">Eliminar</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>

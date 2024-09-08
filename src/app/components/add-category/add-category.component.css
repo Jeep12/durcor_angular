@@ -1,0 +1,20 @@
+
+  
+  .accordion-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .accordion-panel {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    background-color: #f1f1f1;
+    padding: 0 15px;
+    border: 1px solid #ddd;
+  }
+  
+  .accordion-panel.active {
+    max-height: 1000px; /* A large value to allow the content to be visible */
+    padding: 15px;
+  }
+  

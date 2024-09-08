@@ -1,0 +1,73 @@
+.blocks {
+  display: flex;
+  height: 200px;
+  width: 80%;
+  margin: auto;
+  overflow: hidden; /* Cambia de 'clip' a 'hidden' para evitar que las imágenes sobresalgan del contenedor */
+}
+.tittle {
+
+}
+.blocks img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover; /* Ajusta la imagen para que se ajuste completamente dentro del contenedor */
+  will-change: filter;
+}
+
+.blocks .block {
+  container: block/inline-size;
+  flex: 1;
+  margin-right: -20%;
+  clip-path: polygon(20% 0, 100% 0%, 80% 100%, 0% 100%);
+  transition: .25s flex .125s linear;
+  will-change: flex;
+}
+
+.blocks .block a {
+  position: relative;
+}
+.img2{
+  object-fit: contain;
+  object-position: -150px -230px !important;
+}
+.blocks .block a div {
+  position: absolute;
+  bottom: 1rem;
+  left: 3rem;
+  color: #fff;
+  font-size: 20px;
+  text-align: center;
+  z-index: 2;
+}
+.tittle {
+font-size: 45px !important;
+}
+.blocks .block:first-child img {
+  filter: grayscale(0);
+}
+
+.blocks .block img {
+  filter: grayscale(1);
+}
+
+.blocks .block:hover {
+  flex: 1.25;
+}
+
+.blocks .block:hover img {
+  filter: grayscale(0);
+}
+
+.blocks .block:first-child {
+  clip-path: polygon(0 0, 100% 0%, 80% 100%, 0% 100%);
+}
+
+.blocks .block:last-child {
+  margin-right: -15%;
+  clip-path: polygon(20% 0, 100% 0%, 100% 100%, 0% 100%);
+}
+
+.blocks:hover .block:not(:first-child):hover ~ .block:first-child img {
+  filter: grayscale(1);
+}
